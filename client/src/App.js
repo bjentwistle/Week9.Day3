@@ -20,7 +20,7 @@ function App() {
     setGuestBookings([...guestBookings, newBooking])
   }
 
-  const deleteBooking = (id) => {
+  const removeBooking = (id) => {
     const bookingsToKeep = guestBookings.filter(bookingToDelete => bookingToDelete._id !== id)
     setGuestBookings(bookingsToKeep)
   }
@@ -31,7 +31,7 @@ function App() {
     <div className="App">
       <h1>Hotel Bookings</h1>
       <BookingForm addBooking = {addBooking} />
-      <BookingGrid bookings = {guestBookings} deleteBooking = {deleteBooking} />
+      <BookingGrid bookings = {guestBookings} removeBooking = {removeBooking} />
     </div>
   );
 }

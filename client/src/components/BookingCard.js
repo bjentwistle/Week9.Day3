@@ -1,6 +1,13 @@
-import {deleteBooking} from './BookingService'
+import {removeBooking} from './BookingService'
 
 const BookingCard= ({booking, removeBooking}) => {
+
+
+    const handleDelete = () => {
+        deleteBooking(booking._id).then(()=> {
+            removeBooking(booking._id);
+        })
+    }
 
     //////////////////// come back to this later
     
@@ -10,6 +17,8 @@ const BookingCard= ({booking, removeBooking}) => {
                 <h1>Name: {booking.guest}</h1>
                 <h3>Email: {booking.email}</h3>
                 <h4>Check-in status: {booking.checkinStatus}</h4>
+                <button onClick = {handleDelete}>Delete</button>
+                <hr></hr>
             </>
         )
 }
