@@ -5,8 +5,6 @@ import BookingForm from './components/BookingForm';
 import { getBookings } from './components/BookingService';
 import BookingGrid from './components/BookingGrid';
 
-
-
 function App() {
   const [guestBookings, setGuestBookings] = useState([]);
 
@@ -25,11 +23,9 @@ function App() {
     setGuestBookings(bookingsToKeep)
   }
 
-
-
   return (
     <div className="App">
-      <h1>Hotel Bookings</h1>
+      <h1 className = "App-header">Hotel Bookings</h1>
       <BookingForm addBooking = {addBooking} />
       <BookingGrid bookings = {guestBookings} removeBooking = {removeBooking} />
     </div>
