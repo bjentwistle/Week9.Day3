@@ -52,9 +52,10 @@ const BookingsForm = ({addBooking}) => {
             </div>
             <div className="formWrap">
                 <label htmlFor="checkinStatus">Select Checked In Status:</label>
-                <select  name="checkinStatus" id="checkinStatus">
-                <option onChange={onChange} value={formData.checkinStatus = "true"}>Checked in</option>
-                <option onChange={onChange} value={formData.checkinStatus = "false"}>Not checked in</option>
+                <select  onChange={onChange} name="checkinStatus" id="checkinStatus" value={formData.checkinStatus}>
+                    <option value = "disabled">Select</option>
+                    <option  value= "Not checked in">Not checked in</option>
+                    <option  value= "Checked in">Checked in</option>
                 </select>            
             </div>
 

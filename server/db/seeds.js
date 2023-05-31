@@ -5,21 +5,21 @@ db.bookings.insertMany([
   {
     guest: "Jane Smith",
     email: "jane.smith@hotmail.com",
-    checkinStatus :"true"
+    checkinStatus :"Checked in"
   },
   {
     guest: "John Walker",
     email: "jonnie_whiskey@gmail.com",
-    checkinStatus :"false"
+    checkinStatus :"Not checked in"
   },
   {
     guest: "Sara Cox",
     email: "sara.cox@bbc.radio1.co.uk",
-    checkinStatus :"false"
+    checkinStatus :"Not checked in"
   },
   {
     guest: "Brian Cox",
     email: "astrophysics_Dude@universe.ed.uk",
-    checkinStatus :"true"
+    checkinStatus :"Checked in"
   }
 ]);
