@@ -17,15 +17,18 @@ const BookingsForm = ({addBooking}) => {
 
     const onSubmit = (e) =>{
         e.preventDefault();
-        postBooking(formData).then((data)=>{
-            addBooking(data);
-        })
-        // Reset the form input values
+        if (formData.guest && formData.email){  //stops the form being submitted if one field is empty
+            postBooking(formData).then((data)=>{
+                addBooking(data);
+            })
+            // Reset the form input values
         setFormData({
             guest: "",
             email: "",
             checkinStatus: ""
         });
+        }
+        
     }
 
 return (
