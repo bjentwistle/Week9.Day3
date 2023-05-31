@@ -16,14 +16,22 @@ function App() {
     })
   }, []);
       
+  const addBooking = (newBooking) => {
+    setGuestBookings([...guestBookings, newBooking])
+  }
+
+  const deleteBooking = (id) => {
+    const bookingsToKeep = guestBookings.filter(bookingToDelete => bookingToDelete._id !== id)
+    setGuestBookings(bookingsToKeep)
+  }
 
 
 
   return (
     <div className="App">
-    <h1>Hotel Bookings</h1>
-    <BookingGrid bookings = {guestBookings}  />
-      
+      <h1>Hotel Bookings</h1>
+      <BookingForm addBooking = {addBooking} />
+      <BookingGrid bookings = {guestBookings} deleteBooking = {deleteBooking} />
     </div>
   );
 }
