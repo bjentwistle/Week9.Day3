@@ -2,16 +2,21 @@ import {deleteBooking} from './BookingService'
 
 const BookingCard= ({booking, removeBooking}) => {
 
-
     const handleDelete = () => {
         deleteBooking(booking._id).then((res)=> {
             removeBooking(booking._id);
         })
     }
 
+//     const checkedIn = () => {
+//     if (booking.checkinStatus === "true") {
+//         return "Checked in"
+//     }
+// }
     //////////////////// come back to this later
     
     console.log(booking.checkinStatus)
+    
         return (
             <>
                 <h1>Name: {booking.guest}</h1>
