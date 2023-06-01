@@ -28,7 +28,6 @@ const BookingsForm = ({addBooking}) => {
             checkinStatus: ""
         });
         }
-        
     }
 
 return (
@@ -64,8 +63,8 @@ return (
         <input type="submit" value="Save" id="save"/>
         <hr></hr>
     </form>
-
 );
-}
+
+};
 
 export default BookingsForm;

@@ -45,6 +45,23 @@ const createRouter = function (collection) {
     });
   })
 
+//added to update the checkin status of a booking
+  router.put('/:id', (req, res) => {
+    const id = req.params.id;
+    const updatedData = req.body;
+    delete updatedData._id; // need to remove the id because the database doesn't like that
+
+    collection.update({_id: IbjectId(id)}, {$set: updatedData})
+    .then((result) => { res.json(result)
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500);
+      res.json({ status: 500, error: err });
+    });
+
+  })
+
   router.delete('/:id', (req, res) => {
     const id = req.params.id;
     collection

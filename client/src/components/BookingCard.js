@@ -2,6 +2,7 @@ import {deleteBooking} from './BookingService'
 
 const BookingCard= ({booking, removeBooking}) => {
 
+
     const handleDelete = () => {
         deleteBooking(booking._id).then((res)=> {
             removeBooking(booking._id);
